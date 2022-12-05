@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Gitignore updates">
+    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Added writing to html files from src to dist">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/compiler/Compiler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670234237091</updated>
-      <workItem from="1670234238520" duration="14341000" />
+      <workItem from="1670234238520" duration="16256000" />
     </task>
     <task id="LOCAL-00001" summary="Added heading generation functionality">
       <created>1670268383202</created>
@@ -122,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670271085281</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added writing to html files from src to dist">
+      <created>1670272199487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670272199487</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +153,8 @@
     <MESSAGE value="Added heading generation functionality" />
     <MESSAGE value="Only md files are parsed" />
     <MESSAGE value="Gitignore updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gitignore updates" />
+    <MESSAGE value="Added writing to html files from src to dist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added writing to html files from src to dist" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -28,11 +28,15 @@ public class StaticSite implements Runnable {
 
     @Parameters(paramLabel = "PROJECT_ROOT", description = "Path to project root directory")
     String rootDirPath;
-    MarkdownParser parser = new MarkdownParser();
+    private MarkdownParser parser = new MarkdownParser();
+    public static Config config;
 
     public static void main(String[] args) {
-
-        new CommandLine(new StaticSite()).execute(args);
+        StaticSite staticSite = new StaticSite();
+        CommandLine cl = new CommandLine(staticSite);
+        cl.parseArgs(args);
+        config = Config.init(staticSite.getConfigPath());
+        cl.execute(args);
     }
 
     private Path getSrcDirPath() {
@@ -41,6 +45,10 @@ public class StaticSite implements Runnable {
 
     private Path getDistDirPath() {
         return Path.of(rootDirPath, "dist").toAbsolutePath();
+    }
+
+    private Path getConfigPath() {
+        return Path.of(rootDirPath, "config.yaml").toAbsolutePath();
     }
 
     @Override
@@ -69,6 +77,7 @@ public class StaticSite implements Runnable {
             System.out.println("Site has been successfully generated!");
         } catch (IOException error) {
             System.err.println(error.getMessage());
+            System.exit(1);
         }
     }
 }
