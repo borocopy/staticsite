@@ -1,5 +1,8 @@
 package org.staticsite.entity;
 
+import com.ibm.icu.text.Transliterator;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Article {
@@ -24,7 +27,7 @@ public class Article {
     }
 
     public String getTitle() {
-        return title;
+        return title.trim();
     }
 
     public void setTitle(String title) {
@@ -45,5 +48,12 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getFileName() {
+        SimpleDateFormat dateParser = new SimpleDateFormat("dd-MM-yyyy");
+        Transliterator toLatinTrans = Transliterator.getInstance("Cyrillic-Latin");
+        String result = String.join("-", toLatinTrans.transliterate(getTitle()).split(" "));
+        return dateParser.format(getDateWritten()) + "-" + result.toLowerCase();
     }
 }
