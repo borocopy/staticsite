@@ -13,13 +13,15 @@ public class MarkdownParser {
 
     public Block blockFromBuffer(StringBuffer buffer) {
         String content = buffer.toString().trim();
-        Pattern headingPattern = Pattern.compile("^(#+)\\S+(.*)$");
+        Pattern headingPattern = Pattern.compile("^(#+)\\s+(.*)$");
         Matcher headingMatcher = headingPattern.matcher(content);
         Block block;
 
         if (headingMatcher.find()) {
+            Integer headingValue =
+                    headingMatcher.group(1).length() > 6 ? 6 : headingMatcher.group(1).length();
             block = new Block.BlockBuilder(
-                    String.format("h%d", headingMatcher.group(1).length())
+                    String.format("h%d", headingValue)
                 )
                 .setContent(headingMatcher.group(2))
                 .build();

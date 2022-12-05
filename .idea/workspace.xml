@@ -10,17 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/staticsite_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670234237091</updated>
-      <workItem from="1670234238520" duration="11192000" />
+      <workItem from="1670234238520" duration="11449000" />
     </task>
     <servers />
   </component>
