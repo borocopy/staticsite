@@ -32,24 +32,24 @@ public class MarkdownParser {
         return block;
     }
 
-    public void parse(String pathToFile) {
+    public StringBuffer parse(String pathToFile) {
+        StringBuffer parsedBuffer = new StringBuffer();
         try (BufferedReader reader = new BufferedReader(new FileReader(pathToFile))) {
            String line;
            StringBuffer buffer = new StringBuffer();
            while ((line = reader.readLine()) != null) {
                buffer.append(" " + line);
                if (line.isBlank()) {
-                   System.out.println(
-                       blockFromBuffer(buffer).toString()
-                   );
+                   parsedBuffer.append(blockFromBuffer(buffer));
+                   parsedBuffer.append("\n");
                    buffer.setLength(0);
                }
            }
-            System.out.println(
-                blockFromBuffer(buffer).toString()
-            );
+            parsedBuffer.append(blockFromBuffer(buffer));
         } catch(Exception err) {
 
         }
+
+        return parsedBuffer;
     }
 }
