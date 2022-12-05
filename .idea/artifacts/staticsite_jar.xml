@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="staticsite:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/staticsite_jar</output-path>
+    <root id="archive" name="staticsite.jar">
+      <element id="module-output" name="staticsite" />
+    </root>
+  </artifact>
+</component>
