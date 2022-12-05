@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" afterDir="false" />
+    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Added heading generation functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
     <configuration name="project" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.staticsite.StaticSite" />
       <module name="staticsite" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../test/file.md" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../test/" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -70,8 +73,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670234237091</updated>
-      <workItem from="1670234238520" duration="11449000" />
+      <workItem from="1670234238520" duration="13033000" />
     </task>
+    <task id="LOCAL-00001" summary="Added heading generation functionality">
+      <created>1670268383202</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670268383202</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,27 +101,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added heading generation functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added heading generation functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/staticsite/parser/Block.java</url>
-          <line>12</line>
-          <properties class="org.staticsite.parser.Block" method="toString">
+          <url>file://$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java</url>
+          <line>34</line>
+          <properties class="org.staticsite.StaticSite" method="run">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java</url>
-          <line>13</line>
-          <properties class="org.staticsite.parser.MarkdownParser" method="blockFromBuffer">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
