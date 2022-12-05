@@ -1,15 +1,26 @@
 package org.staticsite.parser;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import org.staticsite.Config;
+import org.staticsite.entity.Article;
+import org.staticsite.entity.IncorrectArticleMetadataException;
+
+import java.io.*;
+import java.nio.file.Path;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MarkdownParser {
     private String inputDir;
     private String outputDir;
+    private final Config config;
 
-    public MarkdownParser() {}
+    public MarkdownParser(Config config) {
+        this.config = config;
+    }
 
     public Block blockFromBuffer(StringBuffer buffer) {
         String content = buffer.toString().trim();
@@ -32,11 +43,34 @@ public class MarkdownParser {
         return block;
     }
 
-    public StringBuffer parse(String pathToFile) {
+    public Article parseArticle(File pathToFile) throws
+            IncorrectArticleMetadataException,
+            IOException,
+            ParseException
+    {
         StringBuffer parsedBuffer = new StringBuffer();
-        try (BufferedReader reader = new BufferedReader(new FileReader(pathToFile))) {
+        HashMap<String, String> articleInfo = new HashMap<String, String>();
+        BufferedReader reader = new BufferedReader(new FileReader(pathToFile));
            String line;
            StringBuffer buffer = new StringBuffer();
+
+           Pattern keyValuePattern = Pattern.compile("^(.+):(.+)$");
+           while (!(line = reader.readLine()).trim().toUpperCase().equals("BEGIN")) {
+               Matcher keyValueMatcher = keyValuePattern.matcher(line);
+               if (keyValueMatcher.find()) {
+                   articleInfo.put(keyValueMatcher.group(1), keyValueMatcher.group(2));
+               } else {
+                   throw new IncorrectArticleMetadataException(
+                       String.format(
+                               "Incorrect key/value pair: %s %s",
+                               keyValueMatcher.group(1).trim(),
+                               keyValueMatcher.group(2).trim()
+                       )
+                   );
+               }
+               buffer.setLength(0);
+           }
+
            while ((line = reader.readLine()) != null) {
                buffer.append(" " + line);
                if (line.isBlank()) {
@@ -46,10 +80,12 @@ public class MarkdownParser {
                }
            }
             parsedBuffer.append(blockFromBuffer(buffer));
-        } catch(Exception err) {
-
-        }
-
-        return parsedBuffer;
+        SimpleDateFormat dateParser = new SimpleDateFormat("dd-MM-yyyy");
+        return new Article(
+                config.getAuthor(),
+                articleInfo.get("title"),
+                dateParser.parse(articleInfo.get("date")),
+                parsedBuffer.toString()
+        );
     }
 }
