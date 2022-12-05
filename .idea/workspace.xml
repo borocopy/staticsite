@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Added heading generation functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" afterDir="false" />
-    </list>
+    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Gitignore updates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670234237091</updated>
-      <workItem from="1670234238520" duration="13033000" />
+      <workItem from="1670234238520" duration="13311000" />
     </task>
     <task id="LOCAL-00001" summary="Added heading generation functionality">
       <created>1670268383202</created>
@@ -82,7 +77,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670268383202</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Only md files are parsed">
+      <created>1670270805704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670270805704</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Gitignore updates">
+      <created>1670270947303</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670270947303</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,7 +111,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added heading generation functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added heading generation functionality" />
+    <MESSAGE value="Only md files are parsed" />
+    <MESSAGE value="Gitignore updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gitignore updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
