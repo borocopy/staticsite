@@ -3,11 +3,11 @@ package org.staticsite.parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Block {
-    private String tag;
-    private Boolean isSingular;
-    private String content;
-    private List<String> classes;
+public class Block implements ITag {
+    public String tag;
+    public boolean isSingular;
+    public String content;
+    public List<String> classes;
 
     @Override
     public String toString() {
@@ -42,7 +42,6 @@ public class Block {
 
     private Block(BlockBuilder blockBuilder) {
         tag = blockBuilder.tag;
-        isSingular = blockBuilder.isSingular;
         content = blockBuilder.content;
         classes = blockBuilder.classes;
     }
@@ -68,8 +67,6 @@ public class Block {
         private Boolean isSingular;
         private String content;
         private List<String> classes;
-
-
 
         public BlockBuilder(String tag) {
             this.tag = tag;

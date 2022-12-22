@@ -16,8 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Compiler {
@@ -67,11 +66,42 @@ public class Compiler {
                         "\\{\\{\\s*date\\s*}}",
                         dateParser.format(article.getDateWritten())
                 );
-        String html = withDate.replaceFirst("\\{\\{\\s*body\\s*}}", article.getContent());
+        String withAuthor = withDate.replaceFirst("\\{\\{\\s*author\s*}}", config.getAuthor());
+        String html = withAuthor.replaceFirst("\\{\\{\\s*body\\s*}}", article.getContent());
 
         PrintWriter writer = new PrintWriter(
                 Path.of(cli.getDistDirPath().toString(),
                         FilenameUtils.getBaseName(article.getFileName()) + ".html").toString(),
+                StandardCharsets.UTF_8
+        );
+        writer.println(html);
+        writer.close();
+    }
+    public void compileLanding() throws IOException, IncorrectArticleMetadataException, ParseException {
+        StringBuffer listBuffer = new StringBuffer();
+        SimpleDateFormat dateParser = new SimpleDateFormat("dd-MM-yyyy");
+        Collections.sort(articles, new Comparator<Article>() {
+            @Override
+            public int compare(Article o1, Article o2) {
+                return o1.getDateWritten().compareTo(o2.getDateWritten());
+            }
+        });
+        Collections.reverse(articles);
+        for (Article article : articles) {
+            String listItem = String.format(
+                    "<li><a href=\"/%s\">%s</a><span class=\"article-date\">%s</span></li>",
+                    article.getFileName(),
+                    article.getTitle(),
+                    dateParser.format(article.getDateWritten())
+            );
+           listBuffer.append(listItem + "\n");
+        }
+
+        String withTitle = landingTemplate.replaceAll("\\{\\{\\s*title\s*}}", config.getTitle());
+        String html = withTitle.replaceFirst("\\{\\{\\s*links\\s*}}", listBuffer.toString());
+
+        PrintWriter writer = new PrintWriter(
+                Path.of(cli.getDistDirPath().toString(),"index.html").toString(),
                 StandardCharsets.UTF_8
         );
         writer.println(html);
