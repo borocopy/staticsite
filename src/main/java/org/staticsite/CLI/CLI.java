@@ -73,8 +73,9 @@ public class CLI implements Runnable {
                         "File " + file.getName() + " has been processed."
                 );
             }
+            compiler.compileLanding();
             System.out.println("Site has been successfully generated!");
-        } catch (IOException error) {
+        } catch (IOException | IncorrectArticleMetadataException | ParseException error) {
             System.err.println(error.getMessage());
             System.exit(1);
         }

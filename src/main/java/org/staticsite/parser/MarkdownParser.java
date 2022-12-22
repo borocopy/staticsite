@@ -5,11 +5,9 @@ import org.staticsite.entity.Article;
 import org.staticsite.entity.IncorrectArticleMetadataException;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashMap;;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

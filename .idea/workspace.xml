@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Added config reading functionality">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/CLI/CLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/entity/IncorrectArticleMetadataException.java" afterDir="false" />
+    <list default="true" id="09331220-d2e8-46e2-ab28-3d9ff42f872c" name="Changes" comment="Added article compilation with metadata and layout feature">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/ITag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/StaticSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/CLI/CLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/CLI/CLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/compiler/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/compiler/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/staticsite/parser/MarkdownParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -40,7 +38,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="borocopy" />
+        <option name="repository" value="staticsite" />
+      </RepoCoordinatesHolder>
+    </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="fc88f649-49d7-4d83-bb8a-c1b5d1017953" />
@@ -91,7 +102,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670234237091</updated>
-      <workItem from="1670234238520" duration="22236000" />
+      <workItem from="1670234238520" duration="22394000" />
+      <workItem from="1670280651096" duration="25000" />
+      <workItem from="1670311600430" duration="597000" />
+      <workItem from="1671731169247" duration="4086000" />
     </task>
     <task id="LOCAL-00001" summary="Added heading generation functionality">
       <created>1670268383202</created>
@@ -142,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670274350169</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added article compilation with metadata and layout feature">
+      <created>1670280542982</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670280542983</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,14 +187,15 @@
     <MESSAGE value="Gitignore updates" />
     <MESSAGE value="Added writing to html files from src to dist" />
     <MESSAGE value="Added config reading functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added config reading functionality" />
+    <MESSAGE value="Added article compilation with metadata and layout feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added article compilation with metadata and layout feature" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/staticsite/compiler/Compiler.java</url>
-          <line>58</line>
+          <line>57</line>
           <properties class="org.staticsite.compiler.Compiler" method="compileArticle">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
